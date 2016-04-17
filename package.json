@@ -1,0 +1,18 @@
+{
+  "name": "my-tab-toggler",
+  "main": "./lib/my-tab-toggler",
+  "version": "0.0.1",
+  "description": "Toggle the tab bar.",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "my-tab-toggler:toggle"
+  },
+  "repository": "https://github.com/atom/my-tab-toggler",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
