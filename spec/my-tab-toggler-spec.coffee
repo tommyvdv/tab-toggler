@@ -6,7 +6,7 @@ MyTabToggler = require '../lib/my-tab-toggler'
 # Activating the tab bar will show it.
 # Using the tab toggler will hide it.
 # Using the tab toggler again will show it.
-# Conclusion: invoke it any even number of times to hide and odd to show.
+# Conclusion: invoke any even number of times to hide and odd to show.
 
 describe "MyTabToggler", ->
   [workspaceElement, activationPromise] = []

@@ -1,4 +1,3 @@
-MyTabTogglerView = require './my-tab-toggler-view'
 {CompositeDisposable} = require 'atom'
 
 module.exports = MyTabToggler =
