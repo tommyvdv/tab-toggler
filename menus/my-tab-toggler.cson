@@ -1,19 +1,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle my-tab-toggler'
-      'command': 'my-tab-toggler:toggle'
+      'label': 'Toggle tab-toggler'
+      'command': 'tab-toggler:toggle'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'my-tab-toggler'
+      'label': 'tab-toggler'
       'submenu': [
         {
           'label': 'Toggle'
-          'command': 'my-tab-toggler:toggle'
+          'command': 'tab-toggler:toggle'
         }
       ]
     ]

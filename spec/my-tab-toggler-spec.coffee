@@ -1,4 +1,4 @@
-MyTabToggler = require '../lib/my-tab-toggler'
+MyTabToggler = require '../lib/tab-toggler'
 
 # Very simple test to see if the tab bar is effectively hidden and/or toggled.
 # @dependsOn package tabs
@@ -13,15 +13,15 @@ describe "MyTabToggler", ->
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('my-tab-toggler')
+    activationPromise = atom.packages.activatePackage('tab-toggler')
     waitsForPromise ->
       atom.packages.activatePackage("tabs")
 
-  describe "when the my-tab-toggler:toggle event is triggered", ->
+  describe "when the tab-toggler:toggle event is triggered", ->
     it "an odd number off times hides the tab bar(s)", ->
       jasmine.attachToDOM(workspaceElement)
       for i in [0...generateEvenNumber(1,10)]
-        atom.commands.dispatch workspaceElement, 'my-tab-toggler:toggle'
+        atom.commands.dispatch workspaceElement, 'tab-toggler:toggle'
       runs ->
         expect(workspaceElement.querySelector('.tab-bar')).toExist()
         expect(workspaceElement.querySelector('.tab-bar')).toBeVisible()
@@ -29,7 +29,7 @@ describe "MyTabToggler", ->
     it "an even number of times shows the tab bar(s)", ->
       jasmine.attachToDOM(workspaceElement)
       for i in [0...generateOddNumber(1,10)]
-        atom.commands.dispatch workspaceElement, 'my-tab-toggler:toggle'
+        atom.commands.dispatch workspaceElement, 'tab-toggler:toggle'
       runs ->
         expect(workspaceElement.querySelector('.tab-bar')).toExist()
         expect(workspaceElement.querySelector('.tab-bar')).not.toBeVisible()

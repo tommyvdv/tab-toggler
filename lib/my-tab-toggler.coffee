@@ -9,7 +9,7 @@ module.exports = MyTabToggler =
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'my-tab-toggler:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'tab-toggler:toggle': => @toggle()
 
   deactivate: ->
     @modalPanel.destroy()

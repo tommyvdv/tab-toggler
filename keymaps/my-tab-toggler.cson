@@ -1,2 +1,2 @@
 'atom-workspace':
-  'shift-cmd-i': 'my-tab-toggler:toggle'
+  'shift-cmd-i': 'tab-toggler:toggle'
