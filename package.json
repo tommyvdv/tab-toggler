@@ -1,10 +1,9 @@
 {
   "name": "tab-toggler",
   "main": "./lib/tab-toggler",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Toggle the tab bar.",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "tab-toggler:toggle"
   },
@@ -13,6 +12,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
