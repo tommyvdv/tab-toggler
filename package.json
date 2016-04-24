@@ -8,7 +8,7 @@
   "activationCommands": {
     "atom-workspace": "tab-toggler:toggle"
   },
-  "repository": "https://github.com/atom/tab-toggler",
+  "repository": "https://github.com/tommyvdv/tab-toggler",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
