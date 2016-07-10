@@ -20,26 +20,38 @@ describe "MyTabToggler", ->
   describe "when the tab-toggler:toggle event is triggered", ->
     it "an odd number off times hides the tab bar(s)", ->
       jasmine.attachToDOM(workspaceElement)
-      for i in [0...generateEvenNumber(1,10)]
-        atom.commands.dispatch workspaceElement, 'tab-toggler:toggle'
+
+      oddNumberBetween = generateOddNumberBetween(1,10)
+      triggerEventTimesX(
+        oddNumberBetween,
+        workspaceElement,
+        'tab-toggler:toggle'
+      )
+
       runs ->
-        expect(workspaceElement.querySelector('.tab-bar')).toExist()
-        expect(workspaceElement.querySelector('.tab-bar')).toBeVisible()
+        expect(atom.packages.isPackageDisabled('tabs')).toBe true
 
     it "an even number of times shows the tab bar(s)", ->
       jasmine.attachToDOM(workspaceElement)
-      for i in [0...generateOddNumber(1,10)]
-        atom.commands.dispatch workspaceElement, 'tab-toggler:toggle'
+
+      evenNumberBetween = generateEvenNumberBetween(1,10)
+      triggerEventTimesX(
+        evenNumberBetween,
+        workspaceElement,
+        'tab-toggler:toggle'
+      )
+
       runs ->
-        expect(workspaceElement.querySelector('.tab-bar')).toExist()
-        expect(workspaceElement.querySelector('.tab-bar')).not.toBeVisible()
+        expect(atom.packages.isPackageDisabled('tabs')).toBe false
 
 # A little help coming up with numbers.
-
-generateOddNumber = (min, max) ->
-  randomNumber = generateNumber(min, max)
-  return randomNumber + (isOdd(randomNumber) ? -1 : 0)
-generateNumber = (min, max) -> Math.floor(Math.random() * (max - min + 1)) + min
-generateEvenNumber = (min, max) -> generateOddNumber(min, max) + 1
+generateOddNumberBetween = (min, max) ->
+  randomNumberBetween = generateNumberBetween(min, max)
+  return randomNumberBetween + (isOdd(randomNumberBetween) ? -1 : 0)
+generateNumberBetween = (min, max) -> Math.floor(Math.random() * (max - min + 1)) + min
+generateEvenNumberBetween = (min, max) -> generateOddNumberBetween(min, max) + 1
 isEven = (num) -> num % 2 ? true : false
 isOdd = (num) -> !isEven(num)
+triggerEventTimesX = (numberOfTimes, element, event) ->
+  for i in [0...numberOfTimes]
+    atom.commands.dispatch element, event
