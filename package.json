@@ -1,7 +1,7 @@
 {
   "name": "tab-toggler",
   "main": "./lib/tab-toggler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Toggle the tab bar.",
   "keywords": [],
   "activationCommands": {
